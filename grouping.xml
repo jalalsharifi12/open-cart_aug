@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="opencartSuite">
+
+<listeners>
+<listener class-name="utilities.ExtentReportManager" />
+</listeners>
+
+  <test thread-count="5" name="opencartTest">
+   <parameter name="browser" value="Chrome"/>
+   
+   
+   <groups>
+     <run>
+      <include name="Master"/>
+     <!-- <include name="Sanity"/>
+      <include name="Sanity"/> --> 
+      
+      <!--<exclude name="Master"/>
+      <exclude name="Sanity"/>
+      <exclude name="Sanity"/>-->
+      
+     </run>
+   </groups>
+   
+    <classes>
+     <class name="testCases.TC_001_AccountRegistrationTest"/>
+      <class name="testCases.TC_002_LoginTest"/>
+    </classes>
+  </test> <!-- opencartTest -->
+</suite> <!-- opencartSuite -->
